@@ -1,5 +1,19 @@
 name: hello-world
-on: push
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        type: choice
+        description: Who to greet
+        options: 
+        - monalisa
+        - cschleiden
+      message:
+        required: true
+      use-emoji:
+        type: boolean
+        description: Include 🎉🤣 emojis
+
 jobs:
   my-job:
     runs-on: ubuntu-latest
