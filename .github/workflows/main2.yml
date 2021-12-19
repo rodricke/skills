@@ -4,7 +4,7 @@ on:
       logLevel:
         description: 'Log level'     
         required: true
-        default: 'warning' {% ifversion ghec or ghes > 3.3 or ghae-issue-5511 %}
+        default: 'warning'
         type: choice
         options:
         - info
