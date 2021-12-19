@@ -22,3 +22,5 @@ jobs:
         run: echo "Hello World!"
       - name: my-step2
         run: echo "Rodrick!"
+      - name: Send greeting
+        run: echo "${{ github.event.inputs.message }} ${{ fromJSON('["", "🥳"]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.name }}"
