@@ -13,16 +13,22 @@ on:
       use-emoji:
         type: boolean
         description: Include 🎉🤣 emojis
+        
 
 jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
+      - name: step-zero
+        env:
+          FIRST_NAME: Mona
+          middle_name: The
+          Last_Name: Octocat
       - name: my-step
         run: echo "Hello World!"
       - name: my-step2
         run: |
           echo "Rodrick!"
-          echo "second line world $GITHUB_WORKFLOW"
+          echo "second line world $GITHUB_WORKFLOW $Last_Name"
       - name: Send greeting
         run: echo "${{ github.event.inputs.message }} ${{ fromJSON('["", "🥳"]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.name }}"
