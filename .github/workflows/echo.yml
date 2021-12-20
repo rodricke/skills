@@ -41,4 +41,4 @@ jobs:
           echo "Rodrick!"
           echo "second line world $GITHUB_WORKFLOW $Last_Name"
       - name: Send greeting
-        run: echo "${{ env.name }}zz  ${{ fromJSON('["", "🥳"]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.name }}"
+        run: echo "${{ env.name }}zz  ${{ fromJSON('["", "🥳"]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.environment }}"
