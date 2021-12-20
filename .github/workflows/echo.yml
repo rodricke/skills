@@ -20,7 +20,7 @@ on:
         description: Include 🎉🤣 emojis
 
 env:
-   name: ${{github.event.input.environment || 'deployment' }}
+   name: ${{github.event.inputs.environment || 'deployment' }}
 
 jobs:
   my-job:
