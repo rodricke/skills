@@ -28,7 +28,7 @@ jobs:
           middle_name: The
           Last_Name: Octocat
       - name: my-step
-        run: echo "Hello World! $env.name ${{github.event.inputs.message}} ${{github.event.inputs.MESSAGE}}"
+        run: echo "Hello World! $env.name ${{github.event.inputs.message}} ${{secrest[format('BIG_SECRET")]}}" 
       - name: my-step2
         run: |
           echo "Rodrick!"
