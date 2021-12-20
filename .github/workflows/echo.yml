@@ -12,6 +12,7 @@ on:
         - credit
         - one
         default: credit
+        required: true
       message:
         required: true
       use-emoji:
