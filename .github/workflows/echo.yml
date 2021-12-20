@@ -11,6 +11,8 @@ on:
         - one
         default: credit
       message:
+        required: true        
+      MESSAGE:
         required: true
       use-emoji:
         type: boolean
@@ -28,7 +30,7 @@ jobs:
           middle_name: The
           Last_Name: Octocat
       - name: my-step
-        run: echo "Hello World! $env.name"
+        run: echo "Hello World! $env.name $message $MESSAGE"
       - name: my-step2
         run: |
           echo "Rodrick!"
