@@ -5,9 +5,11 @@ on:
       name:
         type: choice
         description: Who to greet
-        options: 
+        options:
         - monalisa
-        - cschleiden
+        - credit
+        - one
+        default: credit
       message:
         required: true
       use-emoji:
@@ -26,7 +28,7 @@ jobs:
           middle_name: The
           Last_Name: Octocat
       - name: my-step
-        run: echo "Hello World!"
+        run: echo "Hello World! $env.name"
       - name: my-step2
         run: |
           echo "Rodrick!"
