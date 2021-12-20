@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: step-zero
+        run: echo "step-zero who"
         env:
           FIRST_NAME: Mona
           middle_name: The
