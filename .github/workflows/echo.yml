@@ -5,8 +5,8 @@ on:
   workflow_dispatch:
     inputs:
       name:
+        description: Who to greet      
         type: choice
-        description: Who to greet
         options:
         - monalisa
         - credit
@@ -15,6 +15,7 @@ on:
         required: true
       message:
         required: true
+        default: 'DEFAULT MSG'
       use-emoji:
         type: boolean
         description: Include 🎉🤣 emojis
