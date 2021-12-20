@@ -19,7 +19,9 @@ on:
       use-emoji:
         type: boolean
         description: Include 🎉🤣 emojis
-        
+
+env:
+   name: ${{github.event.input.name || 'deployment' }}
 
 jobs:
   my-job:
@@ -38,4 +40,4 @@ jobs:
           echo "Rodrick!"
           echo "second line world $GITHUB_WORKFLOW $Last_Name"
       - name: Send greeting
-        run: echo "${{ github.event.inputs.name }} ${{ fromJSON('["", "🥳"]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.name }}"
+        run: echo "${{ env.name }} ${{ fromJSON('["", "🥳"]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.name }}"
