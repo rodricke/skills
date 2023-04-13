@@ -1,0 +1,44 @@
+name: hello-world
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Who to greet      
+        type: choice
+        options:
+        - monalisa
+        - deployment
+        - credit
+        - one
+        default: credit
+        required: true
+      message:
+        required: true
+        default: 'DEFAULT MSG'
+      use-emoji:
+        type: boolean
+        description: Include 🎉🤣 emojis
+
+env:
+   name: ${{github.event.inputs.environment || 'deployment' }}
+
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step-zero
+        run: echo "step-zero who"
+        env:
+          FIRST_NAME: Mona
+          middle_name: The
+          Last_Name: Octocat
+      - name: my-step
+        run: echo "Hello World! secret ${{github.event.inputs.message}} ${{ secrets[format('BIG_SecreT')] }}" 
+      - name: my-step2
+        run: |
+          echo "Rodrick!"
+          echo "second line world $GITHUB_WORKFLOW $Last_Name"
+      - name: Send greeting
+        run: echo "${{ env.name }}zz  ${{ fromJSON('["", "🥳"]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.environment }}"
