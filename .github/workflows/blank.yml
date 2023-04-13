@@ -41,7 +41,7 @@ jobs:
         env:
           parameter_url: '${{ github.event.workflow_run.html_url }}'
         with:
-          debug: ${{ secrets.ACTIONS_STEP_DEBUG || false }}
+          debug: true
           script: |
             // any JavaScript code can go here, you can use Node JS APIs too.
             // Docs: https://docs.github.com/en/rest/checks/runs#create-a-check-run
@@ -51,7 +51,7 @@ jobs:
               repo: context.repo.repo,
               head_sha: context.sha,
               name: "my-check-name",
-              status: "completed",
+              status: "success",
               // Careful, code injection can happen.
               conclusion: "${{ github.event.workflow_run.conclusion }}",
               // This is safe, not string interpolation.
