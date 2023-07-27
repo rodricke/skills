@@ -17,3 +17,4 @@ Mirror 3
 Mirror 4
 Mirror 5
 Mirror 6
+Mirror 7
